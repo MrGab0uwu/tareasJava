@@ -20,8 +20,8 @@ public class TiroDeDados {
         // TODO code application logic here
         dados obj = new dados();
         for (int i = 0; i < 7; i++) {
-            int d1 = Integer.parseInt(JOptionPane.showInputDialog("wea1"));
-            int d2 = Integer.parseInt(JOptionPane.showInputDialog("wea2")); 
+            int d1 = Integer.parseInt(JOptionPane.showInputDialog("Dado 1 Tiro:"+(i+1)));
+            int d2 = Integer.parseInt(JOptionPane.showInputDialog("Dado 2 Tiro:"+(i+1))); 
             if (d1 < 7 && d1 > 0 && d2 > 0 && d2 < 7) {
                 obj.setTiros(d1,d2);
                 obj.getTiros();

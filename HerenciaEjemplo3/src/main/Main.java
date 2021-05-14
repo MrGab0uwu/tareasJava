@@ -30,7 +30,7 @@ public class Main {
         System.out.println("Ingresa la raza de tu personaje (Orco, Humano, Enano, Elfo, Draenei");
         String raza = sc.nextLine();
 
-        System.out.println("Ingresa el genero de tu personaje (Hombre, Mujer)");
+        System.out.println("Ingresa el sexo de tu personaje (Hombre, Mujer)");
         String genero = sc.nextLine();
 
         System.out.println("Ingresa la edad de tu personaje (solo números)");
@@ -60,7 +60,7 @@ public class Main {
             System.out.println("Ingresa el tipo de espada de tu guerrero: (Comun, Rara, Epica, Legendaria)");
             String tipoEspada = sc.nextLine();
 
-            System.out.println("Ingresa el nivel de combate de tu mago: ");
+            System.out.println("Ingresa el nivel de combate de tu guerrero: ");
             double poder = sc.nextInt();
 
             Guerrero guerrero = new Guerrero(nombre, raza, genero, faccion, rol, edad, tipoArmadura, tipoEspada, poder);

@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author Gabriel
  */
 public class Personaje {
+        
     Scanner sc = new Scanner(System.in);
     String nombre,raza,genero,faccion,rol;
     int edad;
