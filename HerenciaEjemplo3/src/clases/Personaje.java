@@ -13,9 +13,9 @@ import java.util.Scanner;
  */
 public class Personaje {
         
-    Scanner sc = new Scanner(System.in);
-    String nombre,raza,genero,faccion,rol;
-    int edad;
+    protected Scanner sc = new Scanner(System.in);
+    protected String nombre,raza,genero,faccion,rol;
+    protected int edad;
     
     public Personaje(String nombre, String raza, String genero, String faccion, String rol, int edad){
         this.nombre = nombre;
