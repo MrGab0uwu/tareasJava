@@ -12,24 +12,29 @@ import javax.swing.JOptionPane;
  *
  * @author gab-uwu
  */
-public class Promedio {
+public class promedio {
     Scanner leer = new Scanner(System.in);
     double calif,result,prom,promGen;
-    double[][] califs = new double[100][4];
+    int iteraccion;
+    double[][] califs = new double[100][100];
     String[] nombre = new String[100];
     
-    public void setDatosAlumno(int x){
-        for(int i = 0; i<x; i++){
-            System.out.println("\n¿Nombre del alumno #"+(i+1)+"?");
-            this.nombre[i] = leer.nextLine();
+    public promedio(){
+        iteraccion = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresa el número de alumnos que desea capturar"));
+        iteracciones(iteraccion);
+        
+    }
+    
+    public void iteracciones(int iteraccion){
+        
+        for(int i = 0; i<iteraccion; i++){
+            this.nombre[i] = JOptionPane.showInputDialog("¿Nombre del alumno #"+(i+1)+"?");
             for (int j = 0; j < 4; j++) {
-                System.out.println("Ingresa la calificacion número "+(j+1)+" del #"+(i+1)+" alumno");
-                this.calif = leer.nextDouble();
-                this.califs[i][j] = califs[i][j]+calif;
-                this.promGen = (promGen + califs[i][j]);
-                leer.nextLine(); // Salto de linea en el buffer por problema con scanner al leer enteros y despues cadenas
+                this.calif = Double.parseDouble(JOptionPane.showInputDialog("Ingresa la calificacion número "+(j+1)+" del #"+(i+1)+" alumno"));
+                this.califs[i][j] = califs[i][j] + calif;
             }       
         }
+        showCalif(iteraccion);  
     }
     
     public String[] getNames(){
@@ -40,24 +45,21 @@ public class Promedio {
         return califs;
     }
     
-    public double getPromGen(){
-        return promGen;
-    }
-    
-    
-    public void showCalif(int iteraccion){
+    void showCalif(int iteraccion){
         for (int i = 0; i < iteraccion; i++) {
-             System.out.println("\nNombre del alumno: "+nombre[i]);
+             System.out.println("Nombre del alumno");
+             System.out.println(nombre[i]);
             for (int j = 0; j < 4; j++) {
-                System.out.println("Calificacion "+(j+1)+": "+califs[i][j]);
-                this.prom = (prom + califs[i][j]);
+                JOptionPane.showMessageDialog(null,"Calificacion "+(j+1)+"\n"+califs[i][j]);
+                prom = (prom + califs[i][j]);
                 if (j == 3) {
-                    System.out.println("Promedio de "+nombre[i]+"\n"+prom/4);
-                    this.prom = 0;
+                    JOptionPane.showMessageDialog(null,"Promedio de: "+nombre[i]+"\n"+prom/4);
+                    prom = 0;
                 }
+                  promGen = (promGen + califs[i][j]);
             }
         }
-        System.out.printf("Promedio General:%n%.2f%n",(promGen/(iteraccion*4)));
+        JOptionPane.showMessageDialog(null,"Promedio General:\n"+promGen/(iteraccion*4));
     }
 
     
