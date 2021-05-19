@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  *
  * @author gab-uwu
  */
-public class promedio {
+public class Promedio {
     Scanner leer = new Scanner(System.in);
     double calif,result,prom,promGen;
     int iteraccion;
     double[][] califs = new double[100][100];
     String[] nombre = new String[100];
     
-    public promedio(){
+    public Promedio(){
         iteraccion = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresa el número de alumnos que desea capturar"));
         iteracciones(iteraccion);
         

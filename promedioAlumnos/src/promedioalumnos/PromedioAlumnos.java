@@ -23,10 +23,8 @@ public class PromedioAlumnos {
         Promedio prom = new Promedio();
         System.out.println("Ingresa el número de alumnos que desea capturar");
         iteraccion = leer.nextInt();
-        prom.setDatosAlumno(iteraccion);
         prom.getNames();
         prom.getCalif();
-        prom.getPromGen();
         prom.showCalif(iteraccion);
     }
     
