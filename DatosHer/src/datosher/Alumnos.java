@@ -12,18 +12,23 @@ package datosher;
 public class Alumnos extends Principal {
 
     double nc;
+    String carrera;
     
     @Override
     public void setCaptura() {
-        super.setCaptura();
-        System.out.println("Escribe tu numero de control");
+        System.out.println("Escribe tu numero de control: ");
         nc = leer.nextDouble();
+        leer.nextLine();
+        System.out.println("Escribe la carrera que estas cursando: ");
+        carrera = leer.nextLine();
+        super.setCaptura();
     }
 
     @Override
     public void showDatos() {
-        super.showDatos();
         System.out.println("NControl " + nc);
+        System.out.println("Carrera" + carrera);
+        super.showDatos();
         leer.nextLine();
     }
 }

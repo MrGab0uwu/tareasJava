@@ -27,7 +27,7 @@ public class DatosHer {
 
         while (!done) {
 
-            System.out.println("¿Base de datos del TECNM Minatitlan\nA quien desea registrar ¿Alumno o Profesor?");
+            System.out.println("Base de datos del TECNM Minatitlan\nA quien desea registrar ¿Alumno o Profesor?");
             persona = sc.nextLine();
 
             if (persona.equalsIgnoreCase("alumno")) {
