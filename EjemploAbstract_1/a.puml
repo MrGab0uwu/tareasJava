@@ -1,0 +1,23 @@
+@startuml
+abstract class clases.Figura
+annotation java.lang.Override
+class clases.Cuadrado
+class clases.Hexagono
+class clases.Rectangulo
+class clases.Triangulo
+class clases.VariablesGlobales
+class java.util.Scanner
+clases.Figura ..> java.util.Scanner
+clases.Cuadrado --|> clases.Figura
+clases.Cuadrado ..> java.lang.Override
+clases.Cuadrado --|> clases.VariablesGlobales
+clases.Hexagono --|> clases.Figura
+clases.Hexagono ..> java.lang.Override
+clases.Hexagono --|> clases.VariablesGlobales
+clases.Rectangulo --|> clases.Figura
+clases.Rectangulo ..> java.lang.Override
+clases.Rectangulo --|> clases.VariablesGlobales
+clases.Triangulo --|> clases.Figura
+clases.Triangulo ..> java.lang.Override
+clases.Triangulo --|> clases.VariablesGlobales
+@enduml
