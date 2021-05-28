@@ -11,22 +11,23 @@ package clases;
  */
 public class Cuadrado extends Figura {
 
-    @Override
-    public void setLados() {
+    public Cuadrado() {
         System.out.println("Ingresa solo el valor de un lado.");
         lado = leer.nextFloat();
+        perimetro();
+        area();
     }
 
     @Override
     public void perimetro() {
         perimetro = lado * 4;
-        System.out.println(ANSI_CYAN+"El perimetro es: " + perimetro + "u");
+        System.out.println(ANSI_CYAN + "El perimetro es: " + perimetro + "u");
     }
 
     @Override
     public void area() {
         area = lado * lado;
-        System.out.println(ANSI_CYAN+"El area del cuadrado es: " + area + "u");
+        System.out.println(ANSI_CYAN + "El area del cuadrado es: " + area + "u");
     }
 
 }

@@ -11,13 +11,11 @@ package clases;
  */
 public class Rectangulo extends Figura {
 
-    @Override
-    public void setLados() {
+    public Rectangulo() {
         lados = new float[2];
-        System.out.println("Ingresa solo un lado de los lados mas largos");
-        lados[0] = leer.nextFloat(); //Lado mas largo
-        System.out.println("Ingresa solo un lado de los lados mas pequeños");
-        lados[1] = leer.nextFloat(); //Lado mas pequeño
+        super.setLados();
+        perimetro();
+        area();
     }
 
     @Override

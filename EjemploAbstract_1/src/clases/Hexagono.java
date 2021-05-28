@@ -11,27 +11,29 @@ package clases;
  */
 public class Hexagono extends Figura {
 
-    @Override
-    public void setLados() {
+    public Hexagono() {
         System.out.println("Ingresa solo la medidad de un lado ya que es un hexagono regular.");
         lado = leer.nextFloat();
+        perimetro();
+        apotema();
+        area();
     }
 
     @Override
     public void perimetro() {
         perimetro = lado * 6;
-        System.out.println(ANSI_CYAN+"El perimetro es: " + perimetro + "u");
+        System.out.println(ANSI_CYAN + "El perimetro es: " + perimetro + "u");
     }
 
     public void apotema() { // c² - b² = a²
         apotema = (float) Math.sqrt((float) Math.pow(lado, 2) - (float) Math.pow((lado / 2), 2));
-        System.out.println(ANSI_CYAN+"El valor de la apotema es: " + apotema + "u");
+        System.out.println(ANSI_CYAN + "El valor de la apotema es: " + apotema + "u");
     }
 
     @Override
     public void area() {
         area = (perimetro * apotema) / 2;
-        System.out.println(ANSI_CYAN+"El area del cuadrado es: " + area + "u");
+        System.out.println(ANSI_CYAN + "El area del cuadrado es: " + area + "u");
     }
 
 }

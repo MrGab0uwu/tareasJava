@@ -16,11 +16,13 @@ public abstract class Figura {
     public static final String ANSI_CYAN = "\u001B[36m"; //Color de CIU
     Scanner leer = new Scanner(System.in);
     float[] lados;
-    float lado, area, perimetro, base, altura, apotema;
+    protected float lado, area, perimetro, base, altura, apotema;
 
     public void setLados() {
-        System.out.println("Ingresa el valor de un lado");
-        lado = leer.nextFloat();
+         for (int i = 0; i < lados.length; i++) {
+            System.out.println("Ingresa un lado");
+            lados[i] = leer.nextFloat();
+        }
     }
 
     abstract void perimetro();

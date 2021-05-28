@@ -10,18 +10,16 @@ package clases;
  * @author gab-uwu
  */
 public class Triangulo extends Figura {
-
-    @Override
-    public void setLados() {
+    
+    public Triangulo() {
         lados = new float[2];
         System.out.println("Ingresa el valor de la base del triangulo.");
         base = leer.nextFloat();
         System.out.println("Ingresa el valor de la altura del triangulo.");
         altura = leer.nextFloat();
-        for (int i = 0; i < lados.length; i++) {
-            System.out.println("Ingresa un lado");
-            lados[i] = leer.nextFloat();
-        }
+        super.setLados();
+        perimetro();
+        area();
     }
 
     @Override
