@@ -13,7 +13,7 @@ public class Cuadrado extends VariablesGlobales implements Figura {
 
     @Override
     public void setLados() {
-        System.out.println("Ingresa solo el valor de un lado.");
+        setLados();
         lado = leer.nextFloat();
     }
 

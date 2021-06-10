@@ -17,7 +17,7 @@ public class Personaje {
     String nombre, raza, genero, faccion, rol;
     int edad;
     double poder;
-    
+
     public void setPersonaje() {
         System.out.println("World of Warcraft es un videojuego de rol multijugador masivo en línea desarrollado por Blizzard Entertainment.");
 

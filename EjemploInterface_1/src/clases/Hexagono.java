@@ -13,7 +13,7 @@ public class Hexagono extends VariablesGlobales implements Figura {
 
     @Override
     public void setLados() {
-        System.out.println("Ingresa solo la medidad de un lado ya que es un hexagono regular.");
+        setLados();
         lado = leer.nextFloat();
     }
 

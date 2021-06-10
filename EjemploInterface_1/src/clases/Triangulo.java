@@ -19,7 +19,7 @@ public class Triangulo extends VariablesGlobales implements Figura {
         System.out.println("Ingresa el valor de la altura del triangulo.");
         altura = leer.nextFloat();
         for (int i = 0; i < lados.length; i++) {
-            System.out.println("Ingresa un lado");
+            setLados();
             lados[i] = leer.nextFloat();
         }
     }

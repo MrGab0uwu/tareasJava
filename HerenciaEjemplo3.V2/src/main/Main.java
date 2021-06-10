@@ -46,7 +46,7 @@ public class Main {
             arquero.showDatos();
 
         } else {
-            System.out.println("Ingresa una clase valida");
+            System.out.println("Ingresa una palabra valida");
         }
     }
 }
