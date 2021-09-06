@@ -77,10 +77,10 @@ public class LectorArchivo {
 
             lector.close(); // Termina el flujo de leectura
             System.out.println("\n¡Completado!");
-        } catch (FileNotFoundException ex) {
-            System.out.println("ERROR ¡El archivo no se encontro!");
-        } catch (IOException ex) {
-            System.out.println("ERROR");
-        }
+            } catch (FileNotFoundException ex) {
+                System.out.println("ERROR ¡El archivo no se encontro!");
+            } catch (IOException ex) {
+                System.out.println("ERROR");
+            }
     }
 }
