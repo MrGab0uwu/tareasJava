@@ -27,14 +27,14 @@ public class LectorArchivo {
 //        escribir.añadirTexto(archivo.nombreArchivo());
 //        leer.leerLinea(archivo.nombreArchivo());
 
-        String nombreArchivo = "/home/gab-uwu/NetBeansProjects/netbeans_texts/Archivo_2";
+        String nombreArchivo = "/home/gab-uwu/NetBeansProjects/netbeans_texts/Archivo";
         String[] texto = {"9", "Hola", "11", "Mundo", "123", "desde", "Ubuntu"};
         String concatenacion = "";
         int sumatoria = 0;
 
         File archivo = new File(nombreArchivo); // Archivo
         PrintWriter sobreEscribir,anidarTexto;
-        BufferedReader leector;
+        BufferedReader lector;
         
         
         System.out.println("Creando archivo de texto");
@@ -51,8 +51,8 @@ public class LectorArchivo {
             System.out.println("¡Completado!");
 
             System.out.println("Analizando archivo...");
-            leector = new BufferedReader(new FileReader(nombreArchivo)); // Objeto que lee
-            String lectura = leector.readLine();
+            lector = new BufferedReader(new FileReader(nombreArchivo)); // Objeto que lee
+            String lectura = lector.readLine();
             while (lectura != null) {
                 boolean resultado;
 
@@ -70,17 +70,17 @@ public class LectorArchivo {
                     System.out.println(lectura + " Si es");
                     sumatoria += Integer.parseInt(lectura);
                 }
-                lectura = leector.readLine();
+                lectura = lector.readLine();
             }
 
             System.out.println("\nSuma:\n" + sumatoria + "\nConcatenacion:\n" + concatenacion);
 
-            leector.close(); // Termina el flujo de leectura
+            lector.close(); // Termina el flujo de leectura
             System.out.println("\n¡Completado!");
         } catch (FileNotFoundException ex) {
-            ex.printStackTrace(System.out);
+            System.out.println("ERROR ¡El archivo no se encontro!");
         } catch (IOException ex) {
-            ex.printStackTrace(System.out);
+            System.out.println("ERROR");
         }
     }
 }
