@@ -44,6 +44,7 @@ public class LectorArchivo {
             anidarTexto = new PrintWriter(new FileWriter(archivo, true)); // Añade texto sin borrar el existete
             System.out.println("Ingresando texto...");
             for (String i : texto) {
+                System.out.println(i);
                 sobreEscribir.println(i);
             }
             sobreEscribir.close(); // Termina el flujo de sobre escribir
