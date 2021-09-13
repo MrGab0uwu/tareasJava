@@ -11,14 +11,19 @@ import java.io.*;
  *
  * @author gab-uwu
  */
-public class EscribirArchivo extends CrearArchivo {
+public class EscribirArchivo{
 
     String[] texto = {"9", "Hola", "11", "Mundo", "123"};
     PrintWriter salida;
+    String nombre_archivo;
+
+    public EscribirArchivo(String nombre_archivo) {
+        this.nombre_archivo = nombre_archivo;
+    }
     
-    public void añadirTexto(String nombreArchivo) {
+    public void anidarTexto() {
         try {
-            salida = new PrintWriter(new FileWriter(nombreArchivo, true));
+            salida = new PrintWriter(new FileWriter(nombre_archivo, true));
             System.out.println("Ingresando texto...");
             for (String i : texto) {
                 salida.println(i); // Se escribe en el archivo lo que contiene la variable contenido
@@ -32,9 +37,9 @@ public class EscribirArchivo extends CrearArchivo {
 
     }
 
-    public void sobreEscribir(String nombreArchivo) {
+    public void sobreEscribir() {
         try {
-            salida = new PrintWriter(nombreArchivo);
+            salida = new PrintWriter(nombre_archivo);
             System.out.println("Ingresando texto...");
             for (String i : texto) {
                 salida.println(i); // Se escribe en el archivo lo que contiene la variable contenido

@@ -6,25 +6,23 @@
 package ArchivoTexto;
 
 import java.io.*;
-import java.util.Scanner;
 
 /**
  *
  * @author gab-uwu
  */
 public class CrearArchivo {
+    File archivo;
+    String nombre_archivo;
     
-    String nombreArchivo = "";
-    
-    public void crear(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Ingresa el nombre del archivo");
-        this.nombreArchivo = sc.nextLine();
-        File archivo = new File(nombreArchivo);
+    public CrearArchivo(String nombre_archivo){
+        this.nombre_archivo = nombre_archivo;
+        archivo = new File(nombre_archivo);
     }
     
-    public String nombreArchivo(){
-        return nombreArchivo;
+    public String getNombreArchivo(){
+        return nombre_archivo;
+        
     }
     
 }

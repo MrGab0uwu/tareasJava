@@ -6,22 +6,27 @@
 package ArchivoTexto;
 
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author gab-uwu
  */
-public class LeerArchivo extends CrearArchivo {
-
-    public void leerLinea(String nombreArchivo) {
+public class LeerArchivo{
+    
+    BufferedReader entrada;
+    String nombre_archivo;
+    
+    public LeerArchivo(String nombre_archivo) {
+        this.nombre_archivo = nombre_archivo;
+    }
+    
+    public void leerLinea() {
         String concatenacion = "";
         int sumatoria = 0;
         
         System.out.println("Analizando archivo...");
         try {
-            var entrada = new BufferedReader(new FileReader(nombreArchivo));
+            entrada = new BufferedReader(new FileReader(nombre_archivo));
             String lectura = entrada.readLine();
             while (lectura != null) {
                 boolean resultado;
@@ -29,7 +34,7 @@ public class LeerArchivo extends CrearArchivo {
                 try {// se controla una posible excepcion
                     Integer.parseInt(lectura);// si se logra guardar correctamente es un numero
                     resultado = true;
-                } catch (NumberFormatException excepcion) {//si no se logra guardar correctamente ocurre lo siguente:
+                } catch (NumberFormatException e) {//si no se logra guardar correctamente ocurre lo siguente:
                     resultado = false;
                 }
 
