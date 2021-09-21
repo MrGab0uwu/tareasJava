@@ -1,0 +1,56 @@
+
+package FuncionesArchivoBinario;
+
+import java.io.*;
+
+/**
+ *
+ * @author gab-uwu
+ */
+public class EscribirArchivo{
+    
+    ObjectOutputStream escribirOOS;
+    AnidarContenido escribirANC;
+    String[] contenido;
+    String nombreArchivo;
+
+    public EscribirArchivo(String nombreArchivo, String[] dcontenidoata) {
+        this.nombreArchivo = nombreArchivo;
+        this.contenido = contenido;
+    }
+
+    public void escribirDatos() {
+        try {
+            var fis = new FileOutputStream(nombreArchivo, true);
+            escribirANC = new AnidarContenido(fis);
+            System.out.println("Ingresando texto...");
+            for (String i : contenido) {
+                escribirANC.writeObject(i); // Se escribe en el archivo lo que contiene la variable contenido
+                System.out.println(i);
+            }
+            escribirANC.close(); // Aqui es cuando realmente se crea el archivo, se cierra el archivo y se termina el flujo
+            System.out.println("Se ha modificado el archivo... Completado!");
+        } catch (IOException ex) {
+            System.out.println("No se encontro el archivo");
+        }
+
+    }
+
+    public void sobreEscribirDatos() {
+        try {
+            escribirOOS = new ObjectOutputStream(new FileOutputStream(nombreArchivo));
+            System.out.println("Ingresando texto...");
+            for (String i : contenido) {
+                escribirOOS.writeObject(i); // Se escribe en el archivo lo que contiene la variable contenido
+                System.out.println(i);
+            }
+            System.out.println("Completado!");
+            escribirOOS.close();
+            System.out.println("Se ha modificado el archivo... Completado!");
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace(System.out);
+        } catch (IOException ex) {
+            System.out.println("No se encontro el archivo");
+        }
+    }
+}
