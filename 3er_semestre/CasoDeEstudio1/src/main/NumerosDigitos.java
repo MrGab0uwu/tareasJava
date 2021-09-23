@@ -13,33 +13,33 @@ public class NumerosDigitos {
     
     int[] numeros;
     String[] nombreDigito;
-    String salida;
+    String numerosDigitos;
     
     public NumerosDigitos(int[] numeros, String[] nombreDigito ){
-        this.numeros = numeros;
+        this.numeros = numeros; 
         this.nombreDigito = nombreDigito;
-        salida = "";
+        numerosDigitos = "";
     }
     
-    public void setNumerosDatos(){
+    public void setNumeroDato(){
                 // ciclo para evaluar el arreglo conforme a su longitud
         for (int i = 0; i < numeros.length; i++) {
             // Arreglo que obtiene todos los caracteres de cada indice del arreglo
             char digits[] = String.valueOf(numeros[i]).toCharArray(); // "123456" = {'1','2','3','4','5','6'}
             // Revisa si el numero en el indice i es menor que 0 o mayor que 999
             if (numeros[i] < 0 || numeros[i] > 999) {
-                salida += numeros[i]+" esta fuera del rango permitido\n";
+                numerosDigitos += numeros[i]+" esta fuera del rango permitido\n\n";
                 // Si se cumple la condicion, se salta al siguiente indice del arreglo
                 continue;
                 // Revisa si el numero en el indice i es menor o igual que 9
             } else if (numeros[i] <= 9) {
-                salida += numeros[i]+" esta en rango de 0 a 9\n";
+                numerosDigitos += numeros[i]+" esta en rango de 0 a 9\n";
                 // Revisa si el numero en el indice i es menor o igual que 99
             } else if (numeros[i] <= 99) {
-                salida += numeros[i]+" esta en rango de 10 a 99\n";
+                numerosDigitos += numeros[i]+" esta en rango de 10 a 99\n";
                 // Revisa si el numero en el indice i es menor o igual que 999
             } else if (numeros[i] <= 999) {
-                salida += numeros[i]+" esta en rango de 100 a 990\n";
+                numerosDigitos += numeros[i]+" esta en rango de 100 a 990\n";
             }
             // Ciclo que se iterara conforme a la longitud del arreglo digits
             for (int j = 0; j < digits.length; j++) {
@@ -52,16 +52,16 @@ public class NumerosDigitos {
                         // Si es diferente se salta la iteracion y empieza la siguiente
                         continue;
                     }
-                    salida+=nombreDigito[k]+ " ";
+                    numerosDigitos+=nombreDigito[k]+ " ";
                 }
             }
-            salida+="\n";
+            numerosDigitos+="\n\n";
         }
     }
     
-    public void showNumerosDatos(){
+    public void showNumeroDato(){
         // Se imprime los resultados de si es o no es y el nombre de cada digito
-        System.out.println(salida);
+        System.out.println(numerosDigitos);
     }
     
     

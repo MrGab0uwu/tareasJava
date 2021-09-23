@@ -19,7 +19,7 @@ public class Main {
         String nombreArchivo = archivo.getNombreArchivo();
         var escribir = new EscribirArchivo(nombreArchivo);
         escribir.sobreEscribirDatos(contenido);
-        var leector = new LeerArchivo(nombreArchivo);
+        var leector = new LeerArchivoNumerosDigitos(nombreArchivo);
         leector.setNumeroString();
         leector.showNumeroString();
         

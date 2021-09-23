@@ -15,9 +15,9 @@ public class Main {
         NumerosDigitos obj = new NumerosDigitos(numeros, nombreDigito);
         
         // Algoritmo para la revision de cada digito del arreglo numeros
-        obj.setNumerosDatos();
+        obj.setNumeroDato();
         // Mostrar el resultado de setNumerosCadenas
-        obj.showNumerosDatos();
+        obj.showNumeroDato();
 
     }
 

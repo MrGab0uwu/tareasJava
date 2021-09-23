@@ -8,7 +8,7 @@ import java.io.*;
  */
 public class LeerArchivoTexto {
 
-    String nombreArchivo;
+    String nombreArchivo,lineas;
     BufferedReader entrada;
 
     public LeerArchivoTexto(String nombreArchivo) {
@@ -18,20 +18,21 @@ public class LeerArchivoTexto {
         } catch (FileNotFoundException ex) {
             System.out.println("El archivo: " + nombreArchivo + " no existe o no esta en la ruta indicada");
         }
+        lineas = "";
     }
 
-    public void showLinea() {
+    public void setLinea() {
         System.out.println("\nAnalizando archivo...");
         try {
             String lectura = entrada.readLine();
             if (lectura == null) {
                 System.out.println("El fichero esta vacio");
             } else {
+                int i = 1;
                 while (lectura != null) {
-                    
-                    System.out.println(lectura);
-                    
+                    lineas+= i+".- "+lectura+"\n";
                     lectura = entrada.readLine();
+                    i++;
                 }
 
             }
@@ -40,6 +41,9 @@ public class LeerArchivoTexto {
             System.out.println("Error");
         }
     }
-    
+
+    public void showLinea() {
+        System.out.println("Lineas:\n"+lineas);
+    }
 
 }

@@ -10,11 +10,11 @@ public class LeerArchivoBinario {
 
     FileInputStream fis;
     ObjectInputStream leerOIS;
-    String nombreArchivo, salida;
+    String nombreArchivo, registro;
 
     public LeerArchivoBinario(String nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
-        salida = "";
+        registro = "";
     }
 
     public void setRegistro() {
@@ -32,9 +32,9 @@ public class LeerArchivoBinario {
                 // Se lee el objeto/linea del archivo binario
                 String lectura = (String) leerOIS.readObject();
                 if (i % 2 != 0) {
-                    salida += lectura + "\n";
+                    registro += lectura + "\n";
                 } else {
-                    salida += lectura + " ";
+                    registro += lectura + " ";
                 }
             }
             // Fin del flujo
@@ -48,7 +48,7 @@ public class LeerArchivoBinario {
     }
 
     public void showRegistro() {
-        System.out.println(salida);
+        System.out.println(registro);
     }
 
 }

@@ -6,14 +6,14 @@ import java.io.*;
  *
  * @author gab-uwu
  */
-public class LeerArchivo {
+public class LeerArchivoNumerosDigitos {
 
     FileInputStream fis;
     ObjectInputStream leerOIS;
     String nombreArchivo, concatenacion, salida;
     int sumatoria;
 
-    public LeerArchivo(String nombreArchivo) {
+    public LeerArchivoNumerosDigitos(String nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
         concatenacion = "";
         salida = "";

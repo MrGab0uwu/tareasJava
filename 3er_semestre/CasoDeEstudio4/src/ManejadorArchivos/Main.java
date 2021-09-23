@@ -19,7 +19,7 @@ public class Main {
         String nombreArchivo = archivo.getNombreArchivo();
         var escritor = new EscribirArchivo(nombreArchivo);
         escritor.sobreEscribir(contenido);
-        var leector = new LeerArchivo(nombreArchivo);
+        var leector = new LeerArchivoFracciones(nombreArchivo);
         leector.setFracciones();
         leector.showFracciones();
         
