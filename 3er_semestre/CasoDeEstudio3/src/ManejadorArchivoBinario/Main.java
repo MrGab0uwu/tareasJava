@@ -13,19 +13,16 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        String[] textos = {"9", "Hola", "11", "Mundo", "123","Ubuntu"};
+        String[] contenido = {"9", "Hola", "11", "Mundo", "123","desde","Ubuntu"};
 
         var archivo = new CrearArchivo("arch.dat");
         String nombreArchivo = archivo.getNombreArchivo();
-        var escribir = new EscribirArchivo(nombreArchivo, textos);
+        var escribir = new EscribirArchivo(nombreArchivo);
+        escribir.sobreEscribirDatos(contenido);
         var leector = new LeerArchivo(nombreArchivo);
-
-        //List x = leer.cadenas();
-        //leer.leer(x);
-        
-        //escribir.sobreEscribirDatos();
-        escribir.escribirDatos();
         leector.leer();
+        leector.showLeer();
+        
     }
 
 }

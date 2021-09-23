@@ -1,4 +1,4 @@
-package FuncionesArchivoBinario;
+package FuncionesArchivo;
 
 import java.io.File;
 
@@ -24,7 +24,6 @@ public class CrearArchivo {
 
     public String getNombreArchivo() {
         return nombreArchivo;
-
     }
 
 }

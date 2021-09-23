@@ -20,8 +20,7 @@ public class Main {
         var escritor = new EscribirArchivo(nombreArchivo);
         escritor.sobreEscribir(contenido);
         var leector = new LeerArchivo(nombreArchivo);
-        leector.setFracciones();
-        leector.showFracciones();
+        leector.leer();
         
     }
     

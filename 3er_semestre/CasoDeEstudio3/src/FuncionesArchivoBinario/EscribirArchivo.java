@@ -11,19 +11,18 @@ public class EscribirArchivo{
     
     ObjectOutputStream escribirOOS;
     AnidarContenido escribirANC;
-    String[] contenido;
     String nombreArchivo;
 
-    public EscribirArchivo(String nombreArchivo, String[] dcontenidoata) {
+    public EscribirArchivo(String nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
-        this.contenido = contenido;
     }
 
-    public void escribirDatos() {
+    public void escribirDatos(String[] contenido) {
         try {
             var fis = new FileOutputStream(nombreArchivo, true);
             escribirANC = new AnidarContenido(fis);
             System.out.println("Ingresando texto...");
+            // Escribe en el archivo lo que esta en "contenido" y muestra en consola lo que va escribiendo
             for (String i : contenido) {
                 escribirANC.writeObject(i); // Se escribe en el archivo lo que contiene la variable contenido
                 System.out.println(i);
@@ -36,10 +35,11 @@ public class EscribirArchivo{
 
     }
 
-    public void sobreEscribirDatos() {
+    public void sobreEscribirDatos(String[] contenido) {
         try {
             escribirOOS = new ObjectOutputStream(new FileOutputStream(nombreArchivo));
             System.out.println("Ingresando texto...");
+            // Escribe en el archivo lo que esta en "contenido" y muestra en consola lo que va escribiendo
             for (String i : contenido) {
                 escribirOOS.writeObject(i); // Se escribe en el archivo lo que contiene la variable contenido
                 System.out.println(i);

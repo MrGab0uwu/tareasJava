@@ -10,42 +10,43 @@ public class LeerArchivo {
 
     FileInputStream fis;
     ObjectInputStream leerOIS;
-    String nombreArchivo;
+    String nombreArchivo, concatenacion, salida;
+    int sumatoria;
 
     public LeerArchivo(String nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
-    } 
+        concatenacion = "";
+        salida = "";
+        sumatoria = 0;
+    }
 
     public void leer() {
-        String concatenacion = "";
-        int sumatoria = 0;
 
-        System.out.println("Analizando archivo...");
+        System.out.println("\nAnalizando archivo...");
         try {
-
+            // objetos con sus respectivas clases para el manejo de la lectura del archivo binario
             fis = new FileInputStream(nombreArchivo);
             leerOIS = new ObjectInputStream(fis);
 
             while (fis.available() > 0) {
-                boolean resultado;
+                // Se lee el objeto/linea del archivo binario
                 String lectura = (String) leerOIS.readObject();
-                    try {// se controla una posible excepcion
-                    Integer.parseInt(lectura);// si se logra guardar correctamente es un numero
-                    resultado = true;
-                } catch (NumberFormatException e) {//si no se logra guardar correctamente ocurre lo siguente:
-                    resultado = false;
-                }
-
-                if (!resultado) {
-                    System.out.println(lectura + " No es");
-                    concatenacion += lectura + " ";
-                } else {
-                    System.out.println(lectura + " Si es");
+                // se controla una posible excepcion
+                try {
+                    // Se intenta transformar a un numero
+                    Integer.parseInt(lectura);
+                    // Se concatena si es numero
                     sumatoria += Integer.parseInt(lectura);
+                    // Se almacena la lectura para imprimirse despues
+                    salida += lectura + " Si es\n";
+                    //si no se logra transformar no es un numero:
+                } catch (NumberFormatException e) {
+                    // Se concatena si no es numero
+                    concatenacion += lectura + " ";
+                    // Se almacena la lectura para imprimirse despues
+                    salida += lectura + " No es\n";
                 }
             }
-
-            System.out.println("\nSuma:\n" + sumatoria + "\nConcatenacion:\n" + concatenacion);
 
             leerOIS.close();
             fis.close();
@@ -54,6 +55,12 @@ public class LeerArchivo {
         } catch (ClassNotFoundException | IOException ex) {
             System.out.println("Error");
         }
+    }
+    
+    
+    public void showLeer(){
+        System.out.println(salida);
+        System.out.println("Suma: " + sumatoria + "\nConcatenacion: " + concatenacion);
     }
 
 }

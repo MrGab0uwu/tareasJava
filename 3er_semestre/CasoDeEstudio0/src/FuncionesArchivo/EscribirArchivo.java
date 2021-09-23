@@ -35,7 +35,7 @@ public class EscribirArchivo {
     public void sobreEscribir(String[] contenido) {
         try {
             entrada = new PrintWriter(new FileWriter(nombreArchivo));
-            // Escribe en el archivo "contenido" y muestra en consola lo que va escribiendo
+            // Escribe en el archivo lo que esta en "contenido" y muestra en consola lo que va escribiendo
             for (String i : contenido) {
                 entrada.println(i);
                 System.out.println(i);

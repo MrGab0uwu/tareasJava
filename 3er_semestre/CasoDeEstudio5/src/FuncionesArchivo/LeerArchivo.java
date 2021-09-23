@@ -9,10 +9,11 @@ import java.io.*;
 public class LeerArchivo {
 
     BufferedReader entrada;
-    String nombreArchivo;
+    String nombreArchivo, nombres;
 
     public LeerArchivo(String nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
+        nombres = "";
         try {
             entrada = new BufferedReader(new FileReader(nombreArchivo));
         } catch (FileNotFoundException ex) {
@@ -20,7 +21,7 @@ public class LeerArchivo {
         }
     }
 
-    public void leer() {
+    public void setLeer() {
         System.out.println("Analizando el archivo...\n");
         char[] caracteres;
         String lectura;
@@ -36,9 +37,9 @@ public class LeerArchivo {
                         recorrido += String.valueOf(caracteres[i]);
                         limite += Integer.parseInt(recorrido);
                         for (int k = aux; k < (limite + aux); k++) {
-                            System.out.print(caracteres[k]);
+                            nombres += caracteres[k];
                         }
-                        System.out.print(" ");
+                        nombres += " ";
                         // 6 + 11 = 17
                         // 17 + 08 = 25
                         aux = limite + aux;
@@ -47,13 +48,17 @@ public class LeerArchivo {
                         recorrido = String.valueOf(caracteres[i]);
                     }
                 }
-                System.out.println("\n");
+                nombres+="\n";
                 lectura = entrada.readLine();
             }
             entrada.close();
         } catch (IOException ex) {
             System.out.println("Error");
         }
+    }
+    
+    public void showLeer(){
+        System.out.println(nombres);
     }
 
 }
