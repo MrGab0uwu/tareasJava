@@ -6,17 +6,18 @@ import java.io.*;
  *
  * @author gab-uwu
  */
-public class EscribirArchivo {
+public class EscribirArchivoTexto {
 
     PrintWriter entrada;
     String nombreArchivo;
 
-    public EscribirArchivo(String nombreArchivo) {
+    public EscribirArchivoTexto(String nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
     }
 
     public void escribir(String[] contenido) {
         try {
+            System.out.println("Ingresando datos...");
             entrada = new PrintWriter(new FileWriter(nombreArchivo, true));
             // Escribe en el archivo lo que esta en "contenido" y muestra en consola lo que va escribiendo
             for (String i : contenido) {
@@ -34,6 +35,7 @@ public class EscribirArchivo {
 
     public void sobreEscribir(String[] contenido) {
         try {
+            System.out.println("Ingresando datos...");
             entrada = new PrintWriter(new FileWriter(nombreArchivo));
             // Escribe en el archivo lo que esta en "contenido" y muestra en consola lo que va escribiendo
             for (String i : contenido) {

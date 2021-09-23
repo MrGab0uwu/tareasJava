@@ -7,13 +7,13 @@ import java.io.*;
  *
  * @author gab-uwu
  */
-public class EscribirArchivo{
+public class EscribirArchivoBinario{
     
     ObjectOutputStream escribirOOS;
     AnidarContenido escribirANC;
     String nombreArchivo;
 
-    public EscribirArchivo(String nombreArchivo) {
+    public EscribirArchivoBinario(String nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
     }
 
@@ -21,7 +21,7 @@ public class EscribirArchivo{
         try {
             var fis = new FileOutputStream(nombreArchivo, true);
             escribirANC = new AnidarContenido(fis);
-            System.out.println("Ingresando datos...");
+            System.out.println("Ingresando texto...");
             // Escribe en el archivo lo que esta en "contenido" y muestra en consola lo que va escribiendo
             for (String i : contenido) {
                 escribirANC.writeObject(i); // Se escribe en el archivo lo que contiene la variable contenido
@@ -38,13 +38,12 @@ public class EscribirArchivo{
     public void sobreEscribirDatos(String[] contenido) {
         try {
             escribirOOS = new ObjectOutputStream(new FileOutputStream(nombreArchivo));
-            System.out.println("Ingresando datos...");
+            System.out.println("Ingresando texto...");
             // Escribe en el archivo lo que esta en "contenido" y muestra en consola lo que va escribiendo
             for (String i : contenido) {
                 escribirOOS.writeObject(i); // Se escribe en el archivo lo que contiene la variable contenido
                 System.out.println(i);
             }
-            System.out.println("Completado!");
             escribirOOS.close();
             System.out.println("Se ha modificado el archivo... Completado!");
         } catch (FileNotFoundException ex) {

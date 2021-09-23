@@ -17,6 +17,7 @@ public class EscribirArchivo {
 
     public void escribir(String[] contenido) {
         try {
+            System.out.println("Ingresando datos...");
             entrada = new PrintWriter(new FileWriter(nombreArchivo, true));
             // Escribe en el archivo lo que esta en "contenido" y muestra en consola lo que va escribiendo
             for (String i : contenido) {
@@ -34,6 +35,7 @@ public class EscribirArchivo {
 
     public void sobreEscribir(String[] contenido) {
         try {
+            System.out.println("Ingresando datos...");
             entrada = new PrintWriter(new FileWriter(nombreArchivo));
             // Escribe en el archivo "contenido" y muestra en consola lo que va escribiendo
             for (String i : contenido) {

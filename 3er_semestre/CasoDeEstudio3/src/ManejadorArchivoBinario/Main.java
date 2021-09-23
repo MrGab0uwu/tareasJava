@@ -20,8 +20,8 @@ public class Main {
         var escribir = new EscribirArchivo(nombreArchivo);
         escribir.sobreEscribirDatos(contenido);
         var leector = new LeerArchivo(nombreArchivo);
-        leector.leer();
-        leector.showLeer();
+        leector.setNumeroString();
+        leector.showNumeroString();
         
     }
 

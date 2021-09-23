@@ -1,4 +1,4 @@
-package FuncionesArchivo;
+package ManejadorArchivos;
 
 import java.io.File;
 

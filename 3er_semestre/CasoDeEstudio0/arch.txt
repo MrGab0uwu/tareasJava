@@ -1,5 +1,6 @@
-4387
-5812
-9132
-4584
-8919
+Hola
+mundo
+desde
+Ubuntu
+20.04
+LTS

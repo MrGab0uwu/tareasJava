@@ -20,7 +20,7 @@ public class LeerArchivo {
         sumatoria = 0;
     }
 
-    public void leer() {
+    public void setNumeroString() {
 
         System.out.println("\nAnalizando archivo...");
         try {
@@ -58,7 +58,7 @@ public class LeerArchivo {
     }
     
     
-    public void showLeer(){
+    public void showNumeroString(){
         System.out.println(salida);
         System.out.println("Suma: " + sumatoria + "\nConcatenacion: " + concatenacion);
     }
