@@ -18,7 +18,7 @@ public class Main {
         var archivo = new CrearArchivo("arch.dat");
         String nombreArchivo = archivo.getNombreArchivo();
         var escribir = new EscribirArchivo(nombreArchivo);
-        escribir.sobreEscribirDatos(contenido);
+        escribir.escribirDatos(contenido);
         var leector = new LeerArchivoNumerosDigitos(nombreArchivo);
         leector.setNumeroString();
         leector.showNumeroString();

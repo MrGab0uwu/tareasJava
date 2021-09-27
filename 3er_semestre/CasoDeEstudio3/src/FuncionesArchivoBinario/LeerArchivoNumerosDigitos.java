@@ -41,7 +41,7 @@ public class LeerArchivoNumerosDigitos {
                     salida += lectura + " Si es\n";
                     //si no se logra transformar no es un numero:
                 } catch (NumberFormatException e) {
-                    // Se concatena si no es numero
+                    // Se concatena si no es numero 
                     concatenacion += lectura + " ";
                     // Se almacena la lectura para imprimirse despues
                     salida += lectura + " No es\n";
